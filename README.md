@@ -1,10 +1,4 @@
-# NAME
-... 
+# ccze-test
+Test ccze word highlighting
 
 Tested on Debian 11
-
-### Installation
-...
-
-### How to use
-`... -h`
