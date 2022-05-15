@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if [ -z "$(command -v ccze)" ]; then
+    echo "ccze is not installed. Install to make this script work."
+    exit 1
+fi
+
+echo "
+BAD WORDS
+---------
+warn  restart  exit  stop  end  shutting  down  close 
+unreach  can't  cannot  skip  deny  disable  ignored 
+miss  oops  not  backdoor  blocking  ignoring 
+unable  readonly  offline  terminate  empty  virus
+
+GOOD WORDS
+-----------
+activ  start  ready  online  load  ok  register  detected 
+configured  enable  listen  open  complete  attempt  done 
+check  listen  connect  finish  clean
+
+ERR WORDS
+---------
+error  crit  invalid  fail  false  alarm  fatal
+
+SYSTEM WORDS
+------------
+ext2-fs  reiserfs  vfs  iso  isofs  cslip  ppp  bsd 
+linux  tcp/ip  mtrr  pci  isa  scsi  ide  atapi 
+bios  cpu  fpu  discharging  resume
+" | ccze -A
